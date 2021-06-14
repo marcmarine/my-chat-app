@@ -1,10 +1,12 @@
+import { connect } from 'react-redux'
+import { addUserName } from '../../actions'
 import { Wrapper } from './styles'
 
-function Home({ setUserName }) {
+function Home({ addUserName }) {
 
   const handleSubmit = event => {
     event.preventDefault()
-    setUserName(event.target['userName'].value)
+    addUserName(event.target['userName'].value)
   }
 
   return (
@@ -15,4 +17,10 @@ function Home({ setUserName }) {
   )
 }
 
-export default Home
+const mapDispatchToProps = dispatch => {
+  return {
+    addUserName: (name) => dispatch(addUserName(name))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Home)

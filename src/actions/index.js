@@ -4,3 +4,10 @@ export function addMessage(message) {
     payload: message
   }
 }
+
+export function addUserName(name) {
+	return {
+		type: 'NEW_USER_NAME',
+		payload: name
+	}
+}

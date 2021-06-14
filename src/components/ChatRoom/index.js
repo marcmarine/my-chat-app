@@ -5,7 +5,7 @@ import { Wrapper } from './styles'
 
 function ChatRoom({ userName, messages, addMessage }) {
   const [newMessage, setNewMessage] = useState(undefined)
-
+  
   const handleSubmit = event => {
     event.preventDefault()
     addMessage(newMessage)
@@ -29,7 +29,7 @@ function ChatRoom({ userName, messages, addMessage }) {
 
 const mapStateToProps = state => {
   return {
-    messages: [ ...state ]
+    ...state
   }
 }
 

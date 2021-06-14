@@ -1,10 +1,10 @@
-const messages = (state = [], action) => {
-  switch (action.type) {
-    case 'NEW_MESSAGE':
-      return state.concat(action.payload)
-    default:
-      return state
-  }
-}
+import { combineReducers } from 'redux'
+import messages from './messages'
+import users from './users'
 
-export default messages
+const reducer = combineReducers({
+  messages,
+  userName: users
+})
+
+export default reducer

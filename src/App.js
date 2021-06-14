@@ -1,13 +1,18 @@
-import { useState } from 'react'
+import { connect } from 'react-redux'
 import Home from './components/Home'
 import ChatRoom from './components/ChatRoom'
 
-function App() {
-  const [userName, setUserName] = useState(undefined)
+function App({ userName }) {
 
-  if (!userName) return <Home setUserName={setUserName} />
+  if (!userName) return <Home />
 
-  return <ChatRoom userName={userName} />
+  return <ChatRoom />
 }
 
-export default App
+const mapStateToProps = state => {
+  return {
+    userName: state.userName
+  }
+}
+
+export default connect(mapStateToProps)(App)
