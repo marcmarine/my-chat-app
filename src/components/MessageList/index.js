@@ -5,7 +5,7 @@ import Message from '../Message'
 function MessageList({ messages, userName }) {
   return (
     <Wrapper>
-      <Message displayMessage={`Buenas tardes ${userName}. ¿Qué tal todo?`} />
+      <Message displayMessage={`👋 Buenas tardes ${userName}. ¿Qué tal todo?`} />
       {messages.map(message => (
         <Message
           key={message.id}

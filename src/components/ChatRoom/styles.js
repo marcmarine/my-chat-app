@@ -1,19 +1,20 @@
 import styled from '@emotion/styled'
 
 export const Wrapper = styled.div`
-  display: grid;
-  height: 100vh;
-  place-content: center;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+`
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding: 0;
-  }
+export const Header = styled.div`
+  align-items: center;
+  color: white;
+  display: flex;
+  padding: .1em 0;
+  position: relative;
+  z-index: 1;
 
-  form {
-    display: flex;
-    flex-direction: column;
+  h2 {
+    line-height: 0;
   }
 `

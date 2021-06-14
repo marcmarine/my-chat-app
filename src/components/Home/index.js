@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { addUserName } from '../../actions'
-import { Wrapper } from './styles'
+import { Wrapper, Form, Input } from './styles'
+import { Button } from '../Layout/styles'
 
 function Home({ addUserName }) {
 
@@ -10,9 +11,11 @@ function Home({ addUserName }) {
   }
 
   return (
-    <Wrapper onSubmit={handleSubmit}>
-      <input id="userName" type="text" autoFocus placeholder="Escribe tu nombre..." />
-      <button type="submit">Empezar</button>
+    <Wrapper>
+      <Form onSubmit={handleSubmit}>
+        <Input id="userName" type="text" autoFocus placeholder="Escribe tu nombre..." />
+        <Button variant="primary" type="submit">Empezar</Button>
+      </Form>
     </Wrapper>
   )
 }
