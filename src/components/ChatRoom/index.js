@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { nanoid } from 'nanoid'
 import { addMessage } from '../../actions'
 import { Wrapper } from './styles'
+import Message from '../Message'
 
 function ChatRoom({ userName, messages, addMessage }) {
   const [newMessage, setNewMessage] = useState(undefined)
@@ -22,8 +23,8 @@ function ChatRoom({ userName, messages, addMessage }) {
   return (
     <Wrapper>
       <ul>
-        <li className="message message--in">Buenas tardes {userName}. ¿Qué tal todo?</li>
-        {messages.map(({id, displayMessage}) => <li key={id} className="message message--out">{displayMessage}</li>)}
+        <Message displayMessage={`Buenas tardes ${userName}. ¿Qué tal todo?`} />
+        {messages.map(message => <Message key={message.id} out {...message} />)}
       </ul>
       <form onSubmit={handleSubmit}>
         <input onChange={event => setNewMessage(event.target.value)} id="message" type="text" autoFocus autoComplete="off" placeholder="Escribe un mensaje..." />

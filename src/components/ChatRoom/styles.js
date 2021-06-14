@@ -10,14 +10,6 @@ export const Wrapper = styled.div`
     flex-direction: column;
     list-style: none;
     padding: 0;
-
-    .message {
-      max-width: 70%;
-
-      &--out {
-        align-self: flex-end;
-      }
-    }
   }
 
   form {
