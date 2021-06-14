@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { connect } from 'react-redux'
+import { addMessage } from './actions'
 import { Home, ChatRoom } from './styles'
 
 function App(props) {
-  const { messages, dispatch } = props
+  const { messages, addMessage } = props
   const [userName, setUserName] = useState(undefined)
   const [newMessage, setNewMessage] = useState(undefined)
 
@@ -14,10 +15,7 @@ function App(props) {
 
   const handleMessage = event => {
     event.preventDefault()
-    dispatch({
-      type: 'NEW_MESSAGE',
-      payload: newMessage
-    })
+    addMessage(newMessage)
     event.target['message'].value = ''
     setNewMessage(undefined)
   }
@@ -49,4 +47,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(App)
+const mapDispatchToProps = dispatch => {
+  return {
+    addMessage: (message) => dispatch(addMessage(message))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

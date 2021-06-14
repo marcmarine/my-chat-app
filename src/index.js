@@ -6,17 +6,9 @@ import logger from 'redux-logger'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import messages from './reducers'
 
-const messageReducer = (state = [], action) => {
-  switch (action.type) {
-    case 'NEW_MESSAGE':
-      return state.concat(action.payload)
-    default:
-      return state
-  }
-}
-
-const store = createStore(messageReducer, applyMiddleware(logger))
+const store = createStore(messages, applyMiddleware(logger))
 
 ReactDOM.render(
   <React.StrictMode>
