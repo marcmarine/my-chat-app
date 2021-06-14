@@ -17,17 +17,6 @@ const messageReducer = (state = [], action) => {
 
 const store = createStore(messageReducer)
 
-store.dispatch({
-  type: 'NEW_MESSAGE',
-  payload: {
-    id: 1,
-    author: 'me',
-    displayMessage: 'test'
-  }
-})
-
-console.log(store.getState())
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
