@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Home, ChatRoom } from './styles'
 
-function App() {
+function App({ dispatch }) {
+
   const [messages, setMessages] = useState([])
   const [userName, setUserName] = useState(undefined)
   const [newMessage, setNewMessage] = useState(undefined)
@@ -29,7 +30,7 @@ function App() {
     <ChatRoom>
       <ul>
         <li className="message message--in">Buenas tardes {userName}. ¿Qué tal todo?</li>
-        {messages.map(message => <li className="message message--out">{message}</li>)}
+        {messages.map((message, index) => <li key={`message${index}`} className="message message--out">{message}</li>)}
       </ul>
       <form onSubmit={handleMessage}>
         <input onChange={event => setNewMessage(event.target.value)} id="message" type="text" autoFocus autoComplete="off" placeholder="Escribe un mensaje..." />
@@ -39,4 +40,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
