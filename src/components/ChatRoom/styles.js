@@ -18,3 +18,25 @@ export const Header = styled.div`
     line-height: 0;
   }
 `
+
+export const HeaderInfo = styled.div`
+  align-items: center;
+  display: flex;
+
+  > * {
+    margin-left: .6em;
+  }
+`
+
+export const Status = styled.span`
+  background-color: ${({ online }) => online ? `#8bc34a` : `#e91e63`};
+  border-radius: 50%;
+  display: block;
+  height: .5em;
+  margin-left: .6em;
+  width: .5em;
+`
+
+export const Name = styled.span`
+  font-weight: bold;
+`

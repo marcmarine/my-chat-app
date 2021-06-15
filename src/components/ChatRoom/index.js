@@ -1,7 +1,7 @@
 
 import { connect } from 'react-redux'
 import { deleteAllMessages, deleteUser } from '../../actions'
-import { Wrapper, Header } from './styles'
+import { Wrapper, Header, HeaderInfo, Status, Name } from './styles'
 import { Button } from '../Layout/styles'
 import MessageList from '../MessageList'
 import InputArea from '../InputArea'
@@ -20,6 +20,10 @@ function ChatRoom({ clearData }) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M15 19l-7-7 7-7" />
           </svg>
         </Button>
+        <HeaderInfo>
+          <Status online />
+          <Name>Alberto</Name>
+        </HeaderInfo>
       </Header>
       <MessageList />
       <InputArea />
