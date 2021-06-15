@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react'
 import { connect } from 'react-redux'
+import { nanoid } from 'nanoid'
+import { addMessage } from '../../actions'
 import { Wrapper } from './styles'
 import Message from '../Message'
 
-function MessageList({ messages, userName }) {
+function MessageList({ messages, userName, addMessage }) {
   const listElement = useRef(null)
 
   useEffect(() => {
@@ -12,13 +14,24 @@ function MessageList({ messages, userName }) {
     }
   }, [messages])
 
+  useEffect(() => {
+    if (userName) {
+      addMessage([{
+        id: nanoid(12),
+        author: 'chatBot',
+        displayMessage: `👋 Buenos días ${userName}. ¿Qué tal todo?`,
+        publishedAt: new Date()
+      }])
+    }
+    
+  }, [userName, addMessage])
+
   return (
     <Wrapper ref={listElement}>
-      <Message displayMessage={`👋 Buenas tardes ${userName}. ¿Qué tal todo?`} />
       {messages.map(message => (
         <Message
           key={message.id}
-          out
+          userName={userName}
           { ...message }
         />
       ))}
@@ -30,4 +43,10 @@ const mapStateToProps = (state) => {
   return state
 }
 
-export default connect(mapStateToProps)(MessageList)
+const mapDispatchToProps = dispatch => {
+  return {
+    addMessage: message => dispatch(addMessage(message))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MessageList)

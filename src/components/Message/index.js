@@ -1,8 +1,9 @@
 import { Wrapper } from './styles'
 
-function Message({ displayMessage, out }) {
+function Message({ displayMessage, userName, author }) {
+  console.log(userName, author)
   return (
-    <Wrapper out={out}>
+    <Wrapper out={userName === author}>
       {displayMessage}
     </Wrapper>
   )
