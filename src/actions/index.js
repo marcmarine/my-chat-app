@@ -11,3 +11,15 @@ export function addUserName(name) {
 		payload: name
 	}
 }
+
+export function deleteUser() {
+	return {
+		type: 'DELETE_USER',
+	} 
+}
+
+export function deleteAllMessages() {
+	return {
+		type: 'DELETE_ALL_MESSAGES',
+	} 
+}
