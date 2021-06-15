@@ -1,0 +1,4 @@
+export const NEW_MESSAGE = 'NEW_MESSAGE'
+export const NEW_USER_NAME = 'NEW_USER_NAME'
+export const DELETE_USER_NAME = 'DELETE_USER_NAME'
+export const DELETE_ALL_MESSAGES = 'DELETE_MESSAGES'

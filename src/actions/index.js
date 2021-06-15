@@ -1,25 +1,27 @@
+import * as types from '../constants/ActionTypes'
+
 export function addMessage(message) {
   return {
-    type: 'NEW_MESSAGE',
+    type: types.NEW_MESSAGE,
     payload: message
   }
 }
 
 export function addUserName(name) {
 	return {
-		type: 'NEW_USER_NAME',
+		type: types.NEW_USER_NAME,
 		payload: name
 	}
 }
 
 export function deleteUser() {
 	return {
-		type: 'DELETE_USER',
+		type: types.DELETE_USER_NAME,
 	} 
 }
 
 export function deleteAllMessages() {
 	return {
-		type: 'DELETE_ALL_MESSAGES',
+		type: types.DELETE_ALL_MESSAGES,
 	} 
 }
