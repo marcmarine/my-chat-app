@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Wrapper } from './styles'
 
 function Message({ displayMessage, userName, author }) {
@@ -8,4 +9,4 @@ function Message({ displayMessage, userName, author }) {
   )
 }
 
-export default Message
+export default memo(Message)
