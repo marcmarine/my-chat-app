@@ -1,20 +1,22 @@
 import { connect } from 'react-redux'
+import { useState } from 'react'
 import { addUserName } from '../../actions'
 import { Wrapper, Form, Input } from './styles'
 import { Button } from '../Layout/styles'
 
 function Home({ addUserName }) {
+  const [newUserName, setNewUserName] = useState(undefined)
 
   const handleSubmit = event => {
     event.preventDefault()
-    addUserName(event.target['userName'].value)
+    addUserName(newUserName)
   }
 
   return (
     <Wrapper>
       <Form onSubmit={handleSubmit}>
-        <Input id="userName" type="text" autoFocus placeholder="Escribe tu nombre..." />
-        <Button variant="primary" type="submit">Empezar</Button>
+        <Input onChange={event => setNewUserName(event.target.value)} id="userName" type="text" autoFocus autoComplete="off" placeholder="Escribe tu nombre..." />
+        <Button disabled={(!newUserName || /^\s+$/.test(newUserName))} variant="primary" type="submit">Empezar</Button>
       </Form>
     </Wrapper>
   )
