@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { useState } from 'react'
 import { addUserName } from '../../actions'
 import { Wrapper, Form, Input } from './styles'
-import { Button } from '../Layout/styles'
+import { Button } from '../../styles'
 
 function Home({ addUserName }) {
   const [newUserName, setNewUserName] = useState(undefined)

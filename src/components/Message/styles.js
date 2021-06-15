@@ -1,27 +1,19 @@
-import { keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
-
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(1em);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`
+import { animate } from '../../styles'
 
 export const Wrapper = styled.li`
   align-self: ${({ out }) => out ? `flex-end` : `flex-start`};
-  animation: ${fadeIn} 400ms ease-in-out;
+  animation: ${animate.fadeInUp} 400ms ease-in-out;
   background-color: white;
   border-bottom-left-radius: ${({ out }) => out ? `2em` : `1em`};
   border-bottom-right-radius: ${({ out }) => out ? `1em` : `2em`};
   border-top-left-radius: 2em;
   border-top-right-radius: 2em;
   max-width: 70%;
-  padding: 1em 1.3em;
+  padding-top: 1em;
+  padding-right: ${({ out }) => out ? `1.3em` : `1.6em`};
+  padding-left: ${({ out }) => out ? `1.6em` : `1.3em`};
+  padding-bottom: 1em;
   line-height: 1.4;
   transition: all 500ms ease-in-out;
 
@@ -38,7 +30,4 @@ export const Wrapper = styled.li`
     margin-top: .2em;
   }
 
-  :first-of-type {
-    border-bottom-left-radius: 2em;
-  }
 `

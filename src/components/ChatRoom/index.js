@@ -2,7 +2,7 @@
 import { connect } from 'react-redux'
 import { deleteAllMessages, deleteUser } from '../../actions'
 import { Wrapper, Header, HeaderInfo, Status, Name } from './styles'
-import { Button } from '../Layout/styles'
+import { Button } from '../../styles'
 import MessageList from '../MessageList'
 import InputArea from '../InputArea'
 

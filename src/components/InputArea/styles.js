@@ -1,7 +1,5 @@
 import styled from '@emotion/styled'
 
-const COLOR_PRIMARY = 'dodgerblue'
-
 export const Wrapper = styled.form`
   position: relative;
   margin-top: -1em;
@@ -23,7 +21,7 @@ export const Button = styled.button`
   background-color: transparent;
   border: none;
   bottom: 0;
-  color: ${COLOR_PRIMARY};
+  color: var(--global--body--backgroundColor);
   ${({ disabled }) => `
   opacity: ${disabled ? 0 : 1};
   cursor: ${disabled ? `default`: `pointer`}`};
@@ -37,7 +35,7 @@ export const Button = styled.button`
   transition: all 200ms ease-in-out;
   
   :hover {
-    background-color: ${COLOR_PRIMARY};
+    background-color: var(--global--body--backgroundColor);
     color: white;
   }
 `

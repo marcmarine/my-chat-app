@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { animate } from '../../styles'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -22,6 +23,7 @@ export const Header = styled.div`
 export const HeaderInfo = styled.div`
   align-items: center;
   display: flex;
+  animation: ${animate.fadeIn} 250ms ease-in-out;
 
   > * {
     margin-left: .6em;

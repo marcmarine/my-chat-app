@@ -1,4 +1,4 @@
-import { Wrapper, Screen} from './styles'
+import { Wrapper, Screen } from './styles'
 
 function Layout({ children, isHome }) {
   return (

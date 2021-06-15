@@ -5,10 +5,9 @@ export const Wrapper = styled.div`
   display: flex;
   font-size: 1.2em;
   height: 100%;
+  position: relative;
   justify-content: center;
   align-items: center;
-
-  position: relative;
   z-index: 1;
 `
 
